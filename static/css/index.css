@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100vw;
+  min-width: 100vh;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.chat {
+  background: grey;
+  width: 25%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.chat_history {
+  height: 70%;
+  background: white;
+}
+
+/*# sourceMappingURL=index.css.map */
