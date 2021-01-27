@@ -1,0 +1,21 @@
+<header>
+  <nav class="navbar">
+    <div class="navbar_ico">
+      webLabirint
+    </div>
+    <ul class="navbar_navigation">
+      <li class="navbar_item">Главная</li>
+      <li class="navbar_item">Новости</li>
+      <li class="navbar_item">О проекте</li>
+    </ul>
+    {% if current_user.is_authentificated %}
+    <div class="navbar_user">
+      asdf
+    </div>
+    {% else %}
+    <div class="navbar_sigin">
+      signin
+    </div>
+    {% endif %}
+  </nav>
+</header>

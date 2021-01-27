@@ -5,11 +5,12 @@
 
 body, html {
   width: 100vw;
-  min-width: 100vh;
+  min-height: 100vh;
 }
 
 .content {
   width: 100%;
+  min-height: 60vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -28,6 +29,43 @@ body, html {
 .chat_history {
   height: 70%;
   background: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.chat_input {
+  height: 20%;
+  /* fix */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.chat_field, .chat_field:active {
+  outline: none;
+}
+.chat_field {
+  display: block;
+  padding: 8px 4px 8px 16px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border: solid 1px #eee;
+  flex: 1 0;
+}
+.chat_submit {
+  display: block;
+  padding: 8px 16px 8px 12px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border: solid 1px #eee;
+  background: green;
+  cursor: pointer;
+  color: white;
+}
+.chat_submit:hover {
+  background: lightgreen;
+}
+.chat_submit:active {
+  background: lightyellow;
 }
 
 /*# sourceMappingURL=index.css.map */

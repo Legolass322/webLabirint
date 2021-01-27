@@ -1,25 +1,45 @@
+{% extends 'base.html' %}
+
 {% block content %}
-
 <div class="content">
-    <div class="chat">
-        <div class="chat_history"></div>
-        <div class="chat_input">
-            <div class="chat_field"></div>
-            <div class="chat_submit"></div>
-        </div>
+  <div class="chat">
+    <div class="chat_history"></div>
+    <div class="chat_input">
+      <input type="text" class="chat_field" placeholder="Type your message...">
+      <div class="chat_submit">Send</div>
     </div>
-    <div class="lobby">
-        <ul class="lobby_list">
-            <li class="lobby_room">
-                <div class="lobby_name">SMt</div>
-                <div class="lobby_count">5/10</div>
-                <div class="lobby_set">...</div>
-            </li>
-        </ul>
-    </div>
-    <div class="profset">
-        Empty
-    </div>
+  </div>
+  <div class="lobby">
+    <ul class="lobby_list">
+      <li class="lobby_room">
+        <div class="lobby_name">SMt</div>
+        <div class="lobby_count">5/10</div>
+        <div class="lobby_set">...</div>
+      </li>
+    </ul>
+  </div>
+  <div class="profset">
+    Empty
+  </div>
 </div>
+{% endblock %}
 
+{% block header %}
+{% include 'navbar.html' %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{css}}index.css">
+<link rel="stylesheet" href="{{css}}navbar.css">
+{% endblock %}
+
+{% block js_libs %}
+<!-- fix: Donload it -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+{% endblock %}
+
+{% block scripts %}
 {% endblock %}
