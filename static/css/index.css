@@ -5,16 +5,23 @@
 
 body, html {
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .content {
   width: 100%;
-  min-height: 60vh;
+  height: calc(100% - 60px - 16px - 60px - 16px);
+  /*min-height: 60vh;*/
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: stretch;
+  margin: auto;
+}
+@media (min-width: 1600px) {
+  .content {
+    width: 1600px;
+  }
 }
 
 .chat {
