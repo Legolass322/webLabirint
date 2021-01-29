@@ -1,0 +1,54 @@
+@import 'sizes';
+
+footer {
+  display: flex;
+
+  width: 100vw;
+  height: $footer_height;
+  margin-top: $footer_margin;
+
+  background: #000000;
+  color: #cccccc;
+
+  box-sizing: border-box;
+  * {
+    box-sizing: border-box;
+  }
+
+  .footer {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .copyright {
+      display: flex;
+      flex-direction: column;
+      * {
+        display: block;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      * {
+        display: block;
+      }
+      a {
+        color: #aaaaaa;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #ffffff;
+      }
+      a:active {
+        color: #cccccc;
+      }
+    }
+
+    @media (min-width: $content_size_fullhd) {
+      width: $content_size_fullhd;
+    }
+  }
+}
