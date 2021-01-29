@@ -1,6 +1,28 @@
 @import 'sizes';
 
 
+@mixin scroll-wrapper {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb{
+    width: 6px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 8px #888888;
+  }
+  &::-webkit-scrollbar-track{
+    width: 6px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 0 8px #555555;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -27,9 +49,9 @@ body, html {
 }
 
 .chat {
-  background: grey;
-  width: 25%;
-  border-radius: 25px;
+  background: transparent;
+  width: 30%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -37,18 +59,47 @@ body, html {
   align-items: stretch;
 
   &_history {
-    height: 70%;
+    flex: 1 0;
+    max-height: calc(100% - 76px);
     background: white;
-    overflow-x: hidden;
-    overflow-y: auto;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid #aaaaaa;
+    border-bottom: none;
+    box-sizing: border-box;
+    padding: {
+      top: 12px;
+      left: 8px;
+      right: 8px;
+      bottom: 0;
+    }
   }
+  &_scrollwrapper {
+    @include scroll-wrapper;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    padding-right: 16px;
+  }
+  &_list {
+    list-style: none;
+  }
+
   &_input {
-    height: 20%; /* fix */
+    height: 60px;
+    margin-top: 16px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    box-sizing: border-box;
+    * {
+      box-sizing: border-box;
+    }
   }
+  $field_height: 36px;
   &_field, &_field:active {
     outline: none;
   }
@@ -57,27 +108,30 @@ body, html {
   }
   &_field {
     display: block;
+    height: $field_height;
     padding: 8px 4px 8px 16px;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
-    border: solid 1px #eee;
+    border: solid 1px #aaaaaa;
     flex: 1 0;
   }
   &_submit {
     display: block;
+    height: $field_height;
     padding: 8px 16px 8px 12px;
     border-top-right-radius: 16px;
     border-bottom-right-radius: 16px;
-    border: solid 1px #eee;
-    background: green;
+    border: solid 1px #aaaaaa;
+    border-left: none;
+    background: #000000;
 
     cursor: pointer;
-    color: white;
+    color: #ffffff;
   }
   &_submit:hover {
-    background: lightgreen;
+    background: #222222;
   }
   &_submit:active {
-    background: lightyellow;
+    background: #555555;
   }
 }
